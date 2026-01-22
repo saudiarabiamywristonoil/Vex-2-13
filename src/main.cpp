@@ -137,19 +137,19 @@ ASSET(example_txt); // '.' replaced with "_" to make c++ happy
  */
 void autonomous() {
     // Move to x: 20 and y: 15, and face heading 90. Timeout set to 4000 ms
-    lemlib::Pose poseA(53,-8,247);
+    lemlib::Pose poseA(48.5,-10.2,246);
     chassis.setPose(poseA);
 
-    chassis.turnToPoint(23, -21, 1000);
-    chassis.moveToPoint(23,-21, 1000);
+    chassis.turnToPoint(19, -23, 1000);
+    chassis.moveToPoint(19,-23, 1000);
 
-    chassis.turnToPoint(47, -47, 1000);
-    chassis.moveToPoint(47, -47, 500);
+    chassis.turnToPoint(30, -48.5, 1000);
+    chassis.moveToPoint(30, -48.5, 1000);
 
-    chassis.turnToPoint(62, -47, 1000);
-    chassis.moveToPoint(62, -47, 500);
+    chassis.turnToPoint(64, -54, 2000);
+    chassis.moveToPoint(64, -54, 2000);
 
-    chassis.moveToPoint(28, -47, 1000, {.forwards = false});
+    chassis.moveToPoint(26, -54, 3000, {.forwards = false});
     chassis.waitUntilDone();
     pros::lcd::print(4, "Traveled 10 inches during pure pursuit!");
     // wait until the movement is done
@@ -163,7 +163,7 @@ void autonomous() {
 void opcontrol() {
     // controller
     // loop to continuously update motors
-    //autonomous();
+    autonomous();
 
     while (true) {
         // get joystick positions
