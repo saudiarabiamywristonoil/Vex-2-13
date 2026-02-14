@@ -42,14 +42,7 @@ ASSET(example_txt);
 
 void initialize() {
     pros::lcd::initialize();
-    pros::lcd::set_text(1, "throwing ant and korey in my private dungeon....");
-
-    imu.reset();
-    while (imu.is_calibrating()) {
-        pros::delay(20);
-    }
-
-    pros::lcd::set_text(1, "oiled up and ready to have fun with!");
+    pros::lcd::set_text(1, "Calibrating...");
 
     leftMotors.set_brake_mode_all(pros::E_MOTOR_BRAKE_HOLD);
     rightMotors.set_brake_mode_all(pros::E_MOTOR_BRAKE_HOLD);
